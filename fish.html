@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Luminara: For the One Who Dreams in Lights</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', cursive, sans-serif;
+      background: #000;
+      overflow-x: hidden;
+      color: #ffffff;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    .aurora-layer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 30% 30%, rgba(255,192,255,0.2), transparent 60%),
+                  radial-gradient(circle at 70% 50%, rgba(173,216,230,0.15), transparent 70%);
+      animation: auroraShift 8s ease-in-out infinite alternate;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    @keyframes auroraShift {
+      0% { background-position: 30% 30%, 70% 50%; }
+      100% { background-position: 40% 40%, 60% 60%; }
+    }
+
+    .overlay {
+      background-color: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(8px);
+      padding: 60px 30px;
+      border-radius: 25px;
+      max-width: 850px;
+      margin: 10vh auto;
+      text-align: center;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      font-size: 40px;
+      color: #ffe6ff;
+      margin-bottom: 20px;
+      text-shadow: 0 0 15px #ffd1f7;
+      animation: glow 3s ease-in-out infinite;
+    }
+
+    h3 {
+      font-size: 22px;
+      margin-bottom: 30px;
+      color: #fbeaff;
+    }
+
+    @keyframes glow {
+      0%, 100% { text-shadow: 0 0 15px #ffb3d9; }
+      50% { text-shadow: 0 0 30px #ff4da6; }
+    }
+
+    .wish {
+      font-size: 18px;
+      line-height: 1.8;
+      padding: 25px;
+      border-radius: 20px;
+      color: #fff;
+      background: url('9cabac19-1a61-4d80-a687-787bffdbbab3.png') no-repeat center center/cover;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+      position: relative;
+    }
+
+    .wish::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 20px;
+      z-index: 0;
+    }
+
+    .wish > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .gallery {
+      display: flex;
+      gap: 20px;
+      margin: 30px 0;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .gallery img {
+      width: 180px;
+      height: 240px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .message-button {
+      background: #ff85c1;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 25px;
+      cursor: pointer;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+      transition: background 0.3s;
+      margin-top: 20px;
+    }
+
+    .message-button:hover {
+      background: #ff5ca5;
+    }
+
+    .hidden-message {
+      display: none;
+      padding: 40px;
+      background: rgba(255, 240, 250, 0.15);
+      border-radius: 25px;
+      margin: 40px auto;
+      max-width: 850px;
+      font-size: 18px;
+      color: #fff;
+      line-height: 1.7;
+      box-shadow: 0 0 15px rgba(255, 182, 193, 0.2);
+      position: relative;
+      z-index: 2;
+    }
+
+    .stars {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: twinkle 5s infinite ease-in-out;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.8; }
+      50% { opacity: 0.1; }
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <audio autoplay loop>
+  <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mp3">
+</audio>
+
+<div class="stars"></div>
+<div class="aurora-layer"></div>
+
+<div class="overlay">
+  <h1>Happy Birthday, My Northern Light ✨</h1>
+  <h3>May your dreams rise with the auroras you adore 💫</h3>
+
+  <div class="gallery">
+    <img src="fishviskcute.jpg" alt="cute1">
+    <img src="https://imgs.search.brave.com/57Hn2bzpbpH8r4iRBHMNJ-SWCQYW3HoJkWZz6xZBV-I/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS12ZWN0b3Iv/Y3V0ZS1jbG93bi1m/aXNoLXN3aW1taW5n/LXdpdGgtYmFsbG9v/bi1jYXJ0b29uLXZl/Y3Rvci1pY29uLWls/bHVzdHJhdGlvbi1h/bmltYWwtaG9saWRh/eS1pc29sYXRlZC1m/bGF0XzEzODY3Ni0x/MTYxOC5qcGc_c2Vt/dD1haXNfaHlicmlk/Jnc9NzQw" alt="cute2">
+    <img src="fishviskonm.jpg" alt="cute3">
+  </div>
+
+  <div class="wish">
+    <div>
+      One day, you'll actually stand under the northern lights.
+And when you do, I hope you think of this moment —
+this little webpage that tried to bring a piece of that dream to you.
+
+You’ve always noticed the small, beautiful things most people miss.
+That’s what makes you different. It’s what makes you you.
+
+No matter where you are in life, I believe in where you're going.
+You’ve always carried something bright in you —
+even when things didn’t feel so light.
+
+So don’t ever hold your dreams back.
+Let them stretch out as wide as the sky you love.
+And just know this: you already shine, more than you realize.
+    </div>
+  </div>
+
+  <button class="message-button" onclick="revealMessage()">Send a Luminara Wish 🌌</button>
+</div>
+
+<div class="hidden-message" id="message">
+  The real magic is not in the sky... it's in <em>you</em>.<br>
+</div>
+
+<audio autoplay loop>
+  <source src="your-song.mp3" type="audio/mp3">
+</audio>
+
+<script>
+  for(let i=0;i<70;i++){
+    let star = document.createElement('div');
+    star.classList.add('star');
+    star.style.top = Math.random() * 100 + '%';
+    star.style.left = Math.random() * 100 + '%';
+    star.style.animationDelay = Math.random() * 5 + 's';
+    document.querySelector('.stars').appendChild(star);
+  }
+
+  function revealMessage() {
+    document.getElementById("message").style.display = "block";
+    window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+  }
+</script>
+
+</body>
+</html>
